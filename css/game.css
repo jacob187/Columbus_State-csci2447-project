@@ -1,17 +1,27 @@
 /* CSS Document */
 @font-face {
    font-family: Roboto-Regular;
-   src: local("./Roboto-Regular");
+   src: url("../fonts/Roboto-Regular.ttf");
 }
+
+@font-face {
+   font-family: Roboto-Medium;
+   src: url("../fonts/Roboto-Medium.ttf");
+}
+
 html,
 body {
    font-family: Roboto-Regular;
    margin: 0 auto;
-   font-family: sans-serif;
-   background-color: antiquewhite;
+   /* background-color: antiquewhite; */
+   background-image: url("../img/pexels-photo-3652927.jpeg");
+   background-repeat: no-repeat;
+   /* background-position-x:center; */
+   background-size: 250%;
 }
 
 h1 {
+   font-family: Roboto-Medium;
    margin: 2px;
    text-align: center;
    color: antiquewhite;
@@ -19,6 +29,7 @@ h1 {
    text-shadow: 1px 3px rgb(153, 172, 134);
 }
 #welcome {
+   font-family: Roboto-Medium;
    text-align: center;
    color: rgb(230, 193, 145);
 }
