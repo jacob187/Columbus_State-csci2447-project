@@ -31,7 +31,7 @@ h1 {
 #welcome {
    font-family: Roboto-Medium;
    text-align: center;
-   color: rgb(230, 193, 145);
+   color: rgb(360, 193, 145);
 }
 button {
    font-size: 12px;
@@ -60,11 +60,24 @@ p#directions {
 }
 div#controls {
    text-align: right;
-   margin-right: 20px;
+   margin: 0px 20px 0px 20px;
+}
+
+#score {
+   font-weight: bolder;
+   color: rgb(300, 193, 145);
 }
 
 div#controls button {
    margin-left: 20px;
+}
+
+.timer {
+   display: none;
+   float: left;
+   font-weight: bolder;
+   color: rgb(300, 193, 145);
+   padding-top: 7px;
 }
 
 div#gamespace {
