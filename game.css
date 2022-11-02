@@ -7,20 +7,21 @@
 }
 @font-face {
    font-family: Roboto-Regular;
-   src: url("../fonts/Roboto-Regular.ttf");
+   src: url("./fonts/Roboto-Regular.ttf");
 }
 
 @font-face {
    font-family: Roboto-Medium;
-   src: url("../fonts/Roboto-Medium.ttf");
+   src: url("./fonts/Roboto-Medium.ttf");
 }
 
 html,
 body {
    font-family: Roboto-Regular;
    margin: 0 auto;
+   background-image: url(/images/baseballstadium.jpg);
    background-repeat: no-repeat;
-   background-size: 250%;
+   background-size: auto;
 }
 
 h1 {
@@ -29,7 +30,7 @@ h1 {
    text-align: center;
    color: var(--brown);
    font-size: 2.5em;
-   text-shadow: 1px 2px var(--tan);
+   text-shadow: 1px 2px var(--light-green);
 }
 #welcome {
    font-family: Roboto-Medium;
@@ -46,7 +47,7 @@ div#content {
    width: 700px;
    margin: 0 auto;
    padding: 20px;
-   background-image: url(../img/baseball-field-grass-turf.jpg);
+   background-image: url(./images/baseball-field-grass-turf.jpg);
    border: 3px solid var(--brown);
    border-radius: 1em;
 }
@@ -70,11 +71,12 @@ div#controls {
 }
 
 #timer {
-   display: none;
+   /* display: none; */
    flex-grow: 6;
 }
 
 #score {
+   /* display: none; */
    flex-grow: 1;
 }
 

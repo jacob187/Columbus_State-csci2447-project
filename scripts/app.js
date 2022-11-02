@@ -1,14 +1,9 @@
-let firstName = "";
+let firstName;
 let score = 0;
+let secondsRemaining = 30;
 welcome();
 
 $(document).ready(function () {
-   console.log("load first " + score);
-   $("#gamespace").prepend(
-      "<img src='./img/baseball.png' alt='Baseball' id='baseball' />"
-   );
-
-   $("#timer").show();
    $("#start_button").css({
       "font-size": "18px",
       "font-weight": "bold",
@@ -20,18 +15,21 @@ $(document).ready(function () {
       height: "54px",
    });
 
-   alert(`x: ${randomXCoordinate()} y: ${randomYCoordinate()}`);
-
    $("#start_button").click(function () {
-      alert();
+      start();
    });
-
-   incrementScore();
 });
 
 function welcome() {
    firstName = prompt("What is your first name?");
    $("#welcome").html(`Are you ready to play the game ${firstName}?`);
+}
+
+function start() {
+   incrementScore();
+   timer();
+   addImage();
+   console.log(`x: ${randomXCoordinate()} y: ${randomYCoordinate()}`);
 }
 
 function randomXCoordinate() {
@@ -44,11 +42,22 @@ function randomYCoordinate() {
    return Math.floor(Math.random() * width);
 }
 
+function timer() {
+   secondsRemaining -= 1;
+   $("#timer").html(`${secondsRemaining} seconds left.`);
+}
+
 function incrementScore() {
    score += 1;
-   if ((score = 1)) {
+   if (score == 1) {
       $("#score").text(`${score} hit`);
    } else {
       $("#score").text(`${score} hits`);
    }
+}
+
+function addImage() {
+   $("#gamespace").prepend(
+      "<img src='./images/baseball.png' alt='Baseball' id='baseball' />"
+   );
 }
