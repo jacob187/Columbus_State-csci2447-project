@@ -1,4 +1,10 @@
 /* CSS Document */
+:root {
+   --dark-yellow: rgb(300, 193, 145);
+   --tan: rgb(231, 206, 173);
+   --brown: rgb(73, 49, 16);
+   --light-green: rgb(153, 172, 134);
+}
 @font-face {
    font-family: Roboto-Regular;
    src: url("../fonts/Roboto-Regular.ttf");
@@ -13,10 +19,7 @@ html,
 body {
    font-family: Roboto-Regular;
    margin: 0 auto;
-   /* background-color: antiquewhite; */
-   background-image: url("../img/pexels-photo-3652927.jpeg");
    background-repeat: no-repeat;
-   /* background-position-x:center; */
    background-size: 250%;
 }
 
@@ -24,14 +27,14 @@ h1 {
    font-family: Roboto-Medium;
    margin: 2px;
    text-align: center;
-   color: antiquewhite;
+   color: var(--brown);
    font-size: 2.5em;
-   text-shadow: 1px 3px rgb(153, 172, 134);
+   text-shadow: 1px 2px var(--tan);
 }
 #welcome {
    font-family: Roboto-Medium;
    text-align: center;
-   color: rgb(360, 193, 145);
+   color: var(--dark-yellow);
 }
 button {
    font-size: 12px;
@@ -44,7 +47,7 @@ div#content {
    margin: 0 auto;
    padding: 20px;
    background-image: url(../img/baseball-field-grass-turf.jpg);
-   border: 3px solid rgb(73, 49, 16);
+   border: 3px solid var(--brown);
    border-radius: 1em;
 }
 .intro {
@@ -59,32 +62,27 @@ p#directions {
    border-radius: 0.5em;
 }
 div#controls {
-   text-align: right;
+   display: flex;
+   align-items: center;
+   font-weight: bolder;
+   color: var(--dark-yellow);
    margin: 0px 20px 0px 20px;
 }
 
-#score {
-   font-weight: bolder;
-   color: rgb(300, 193, 145);
-}
-
-div#controls button {
-   margin-left: 20px;
-}
-
-.timer {
+#timer {
    display: none;
-   float: left;
-   font-weight: bolder;
-   color: rgb(300, 193, 145);
-   padding-top: 7px;
+   flex-grow: 6;
+}
+
+#score {
+   flex-grow: 1;
 }
 
 div#gamespace {
    margin: 20px;
    padding: 10px;
    height: 350px;
-   background-color: rgb(230, 193, 145);
+   background-color: var(--tan);
    border: 2px solid #ccc;
    border-radius: 0.5em;
 }

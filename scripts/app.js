@@ -1,32 +1,32 @@
-// let firstName;
-// let score;
-
+let firstName = "";
+let score = 0;
 welcome();
 
 $(document).ready(function () {
+   console.log("load first " + score);
    $("#gamespace").prepend(
       "<img src='./img/baseball.png' alt='Baseball' id='baseball' />"
    );
 
-   $(".timer").show();
+   $("#timer").show();
    $("#start_button").css({
       "font-size": "18px",
       "font-weight": "bold",
       "font-family": "Roboto-Medium",
       "background-color": "antiquewhite",
-      color: "rgb(73, 49, 16)",
+      color: "var(--brown)",
       "border-radius": ".5em",
       width: "80px",
       height: "54px",
    });
 
-   alert(`x: ${random_x_coordinate()} y: ${random_y_coordinate()}`);
+   alert(`x: ${randomXCoordinate()} y: ${randomYCoordinate()}`);
 
    $("#start_button").click(function () {
       alert();
    });
 
-   score();
+   incrementScore();
 });
 
 function welcome() {
@@ -34,18 +34,21 @@ function welcome() {
    $("#welcome").html(`Are you ready to play the game ${firstName}?`);
 }
 
-function random_x_coordinate() {
+function randomXCoordinate() {
    let length = $("#gamespace").width();
    return Math.floor(Math.random() * length);
 }
 
-function random_y_coordinate() {
+function randomYCoordinate() {
    let width = $("#gamespace").width();
    return Math.floor(Math.random() * width);
 }
 
-function score() {
-   let score = 0;
+function incrementScore() {
    score += 1;
-   $("#score").html(`${score} hits`);
+   if ((score = 1)) {
+      $("#score").text(`${score} hit`);
+   } else {
+      $("#score").text(`${score} hits`);
+   }
 }
