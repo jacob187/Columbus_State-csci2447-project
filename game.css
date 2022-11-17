@@ -71,12 +71,10 @@ div#controls {
 }
 
 #timer {
-   /* display: none; */
    flex-grow: 6;
 }
 
 #score {
-   /* display: none; */
    flex-grow: 1;
 }
 
@@ -87,8 +85,9 @@ div#gamespace {
    background-color: var(--tan);
    border: 2px solid #ccc;
    border-radius: 0.5em;
+   cursor: url("/images/bat.png"), auto;
 }
 
 #baseball {
-   max-width: 15%;
+   max-width: 10%;
 }
