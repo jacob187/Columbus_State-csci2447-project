@@ -7,19 +7,19 @@
 }
 @font-face {
    font-family: Roboto-Regular;
-   src: url("./fonts/Roboto-Regular.ttf");
+   src: url("fonts/Roboto-Regular.ttf");
 }
 
 @font-face {
    font-family: Roboto-Medium;
-   src: url("./fonts/Roboto-Medium.ttf");
+   src: url("fonts/Roboto-Medium.ttf");
 }
 
 html,
 body {
    font-family: Roboto-Regular;
    margin: 0 auto;
-   background-image: url(/images/baseballstadium.jpg);
+   background-image: url(images/baseballstadium.jpg);
    background-repeat: no-repeat;
    background-size: auto;
 }
@@ -47,7 +47,7 @@ div#content {
    width: 700px;
    margin: 0 auto;
    padding: 20px;
-   background-image: url(./images/baseball-field-grass-turf.jpg);
+   background-image: url(images/baseball-field-grass-turf.jpg);
    border: 3px solid var(--brown);
    border-radius: 1em;
 }
@@ -85,7 +85,7 @@ div#gamespace {
    background-color: var(--tan);
    border: 2px solid #ccc;
    border-radius: 0.5em;
-   cursor: url("/images/bat.png"), auto;
+   cursor: url("images/bat.png"), auto;
 }
 
 #baseball {
