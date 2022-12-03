@@ -1,6 +1,8 @@
 let firstName = "";
 let score = 0;
 let secondsRemaining = 30;
+let imageTimer;
+
 welcome();
 
 $(document).ready(function () {
@@ -27,29 +29,19 @@ function welcome() {
    $("#welcome").html(`Are you ready to play the game ${firstName}?`);
 }
 
-//when using ES6 arrow function stardards the following error is logged when the
-//function is called at the top of the program
-
-// Uncaught ReferenceError: can't access lexical declaration 'welcome' before initialization
-
-// const welcome = () => {
-//    firstName = prompt("What is your first name?");
-//    $("#welcome").html(`Are you ready to play the game ${firstName}?`);
-// };
-
 const start = () => {
    timer();
+   imageTimer = setInterval("addImage()", 2000);
 };
 
 const timer = () => {
-   if (secondsRemaining != -1) {
-      //count down 30 -- 0
+   if (secondsRemaining != 0) {
       $("#timer").html(`${secondsRemaining} seconds left.`);
-      secondsRemaining--; // will be -1 at the end
-      setTimeout("addImage()", 2000); // rethink how to call images outside of the timer function as it does not fit the single purpose of this funciton
+      secondsRemaining--;
       setTimeout("timer()", 1000);
    } else {
       clearTimeout(timer);
+      clearInterval(imageTimer);
       clearScore();
       gameOver();
    }
