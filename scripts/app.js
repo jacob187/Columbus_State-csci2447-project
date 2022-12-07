@@ -1,11 +1,11 @@
 let firstName = "";
 let score = 0;
 let secondsRemaining = 30;
-let imageTimer;
-
-welcome();
+let gameOver;
 
 $(document).ready(function () {
+   welcome();
+   $("footer").load("load.html");
    $("#gamespace").on("click", "img", incrementScore);
    $("#start_button").css({
       "font-size": "18px",
@@ -17,60 +17,66 @@ $(document).ready(function () {
       width: "80px",
       height: "54px",
    });
-   //TODO: clear the timer and start counting down when start button gets clicken during a game
+
    $("#start_button").click(function () {
       $("#score").show();
       start();
    });
 });
 
-function welcome() {
+const welcome = () => {
    firstName = prompt("What is your first name?");
    $("#welcome").html(`Are you ready to play the game ${firstName}?`);
-}
-
-const start = () => {
-   timer();
-   imageTimer = setInterval("addImage()", 2000);
 };
 
-const timer = () => {
+const start = () => {
+   $("#start_button").off("click");
+   gameTimer();
+   imageTimer();
+};
+
+const gameTimer = () => {
    if (secondsRemaining != 0) {
       $("#timer").html(`${secondsRemaining} seconds left.`);
       secondsRemaining--;
-      setTimeout("timer()", 1000);
+      setTimeout(gameTimer, 1000);
    } else {
-      clearTimeout(timer);
-      clearInterval(imageTimer);
+      clearTimeout(gameTimer);
+      clearTimeout(imageInterval);
       clearScore();
-      gameOver();
    }
 };
 
 const clearScore = () => {
    score = 0;
 };
-const incrementScore = () => {
+
+const incrementScore = (e) => {
    score++;
    $("#score span").html(score);
+   $(e.target).remove();
 };
 
 const addImage = () => {
+   let imagePosition = imageGameSpaceCoordinate();
    $("#gamespace").prepend(
-      "<img src='./images/baseball.png' alt='Baseball' id='baseball' />"
+      `<img src='./images/baseball.png' alt='Baseball' id='baseball' style=' left: ${imagePosition.width}px; top: ${imagePosition.height}px;'/>`
    );
 };
 
-const randomXCoordinate = () => {
-   let length = $("#gamespace").width();
-   return Math.floor(Math.random() * length);
+const imageTimer = () => {
+   imageInterval = setTimeout(() => {
+      addImage();
+      imageTimer();
+   }, generateRandomNumber(2000));
 };
 
-const randomYCoordinate = () => {
-   let width = $("#gamespace").width();
-   return Math.floor(Math.random() * width);
+const imageGameSpaceCoordinate = () => {
+   let coordinate = {
+      height: generateRandomNumber($("#gamespace").height() - 33.5),
+      width: generateRandomNumber($("#gamespace").width() - 33.5),
+   };
+   return coordinate;
 };
 
-const gameOver = () => {
-   alert("Game Over!");
-};
+const generateRandomNumber = (num) => Math.floor(Math.random() * num);

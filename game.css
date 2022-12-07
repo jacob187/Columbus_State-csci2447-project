@@ -87,7 +87,19 @@ div#gamespace {
    border-radius: 0.5em;
    cursor: url("images/bat.png"), auto;
 }
+div#gamespace img {
+   position: absolute;
+}
+
+div#gamespace {
+   position: relative;
+}
 
 #baseball {
    max-width: 10%;
+}
+
+footer {
+   display: flex;
+   justify-content: center;
 }
