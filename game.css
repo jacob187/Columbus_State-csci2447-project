@@ -75,6 +75,7 @@ div#controls {
 }
 
 #score {
+   display: none;
    flex-grow: 1;
 }
 
@@ -96,7 +97,7 @@ div#gamespace {
 }
 
 #baseball {
-   max-width: 10%;
+   max-width: 20%;
 }
 
 footer {
