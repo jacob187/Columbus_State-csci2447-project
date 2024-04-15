@@ -13,6 +13,6 @@ This project is a batting practice simulation game built using JavaScript and jQ
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
-2. Open the project folder: `cd your-repo`
+1. Clone the repository: `git clone https://github.com/jacob187/Columbus_State-csci2447-project`
+2. Open the project folder: `cd Columbus_State-csci2447-project`
 3. Open `index.html` in your web browser
